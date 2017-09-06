@@ -13,7 +13,7 @@ class Deck {
             this.deck[remainingCards] = this.deck[randomIndex];
             this.deck[randomIndex] = temp;
         }
-        return this.deck;
+        return this;
     }
 
     reset() {
@@ -24,8 +24,7 @@ class Deck {
     }
 
     dealCard() {
-        let randomIndex = Math.floor(Math.random()*this.deck.length);
-        return this.deck.splice(randomIndex, 1)[0];
+        return this.deck.pop();
     }
 }
 
