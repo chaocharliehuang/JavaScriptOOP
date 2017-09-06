@@ -5,17 +5,20 @@ function Ninja(name) {
     var speed = 3;
     var strength = 3;
 
-    this.sayName = function() {
-        console.log("My name is " + this.name);
-    }
-
     this.showStats = function() {
         console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+        return this;
     }
+}
 
-    this.drinkSake = function() {
-        this.health += 10;
-    }
+Ninja.prototype.sayName = function() {
+    console.log("My name is " + this.name);
+    return this;
+}
+
+Ninja.prototype.drinkSake = function() {
+    this.health += 10;
+    return this;
 }
 
 var ninja1 = new Ninja("Hyabusa");
